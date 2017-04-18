@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.udacity.bkoumtak.JokeFactory;
 import com.udacity.bkoumtak.androidjokelibrary.JokeActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,11 +41,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        JokeFactory jokeFactory = new JokeFactory();
+        /*JokeFactory jokeFactory = new JokeFactory();
         Intent jokeIntent = new Intent(this, JokeActivity.class);
         jokeIntent.putExtra(JokeActivity.JOKE_KEY, jokeFactory.getJoke());
-        startActivity(jokeIntent);
+        startActivity(jokeIntent);*/
         //Toast.makeText(this, jokeFactory.getJoke(), Toast.LENGTH_LONG).show();
+        new EndpointsAsyncTask(new EndpointsAsyncTask.AsyncResponse() {
+            @Override
+            public void processFinish(String output) {
+                Intent intent = new Intent(getApplicationContext(), JokeActivity.class);
+                intent.putExtra(JokeActivity.JOKE_KEY, output);
+                startActivity(intent);
+            }
+        }).execute();
     }
 
 

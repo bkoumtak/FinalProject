@@ -1,1 +1,1 @@
-include ':app', ':jokefactory', ':androidjokelibrary'
+include ':app', ':jokefactory', ':androidjokelibrary', ':joke_backend'
