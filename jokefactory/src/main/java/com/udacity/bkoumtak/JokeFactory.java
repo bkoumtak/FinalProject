@@ -2,6 +2,10 @@ package com.udacity.bkoumtak;
 
 import java.util.Random;
 
+/*
+    This class supplies the jokes. The jokes were retrieved from
+    http://royal.pingdom.com/2010/06/01/17-computer-geek-jokes-and-truisms/
+ */
 public class JokeFactory {
     public static final String jokes[] = {
             "A computer lets you make more mistakes faster than any invention in human history - " +
@@ -42,7 +46,9 @@ public class JokeFactory {
             "Lotteries are a tax on people who suck at math."
     };
 
-
+    /*
+        This class retrieves a random joke using a random number generator.
+     */
     public String getJoke(){
         Random rand = new Random();
         int randInt = rand.nextInt(jokes.length);

@@ -21,6 +21,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        free {
+            applicationIdSuffix ".free"
+        }
+        paid {
+            applicationIdSuffix ".paid"
+        }
+    }
 }
 
 dependencies {
@@ -32,6 +40,8 @@ dependencies {
     compile project(':jokefactory')
     compile project(':androidjokelibrary')
     compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.google.android.gms:play-services-ads:10.0.1'
+
+    // Compile add dependency only for free flavor
+    freeCompile 'com.google.android.gms:play-services-ads:10.0.1'
     compile project(path: ':joke_backend', configuration: 'android-endpoints')
 }

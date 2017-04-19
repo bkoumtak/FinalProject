@@ -41,11 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        /*JokeFactory jokeFactory = new JokeFactory();
-        Intent jokeIntent = new Intent(this, JokeActivity.class);
-        jokeIntent.putExtra(JokeActivity.JOKE_KEY, jokeFactory.getJoke());
-        startActivity(jokeIntent);*/
-        //Toast.makeText(this, jokeFactory.getJoke(), Toast.LENGTH_LONG).show();
+
         new EndpointsAsyncTask(new EndpointsAsyncTask.AsyncResponse() {
             @Override
             public void processFinish(String output) {

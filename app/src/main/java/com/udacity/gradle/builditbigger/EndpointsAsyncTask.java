@@ -12,6 +12,9 @@ import java.io.IOException;
 
 /**
  * Created by kondeelai on 2017-04-13.
+ *
+ * This class sets up the backend which asynchronously fetches some jokes from the joke
+ * library.
  */
 
 public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
@@ -59,8 +62,5 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         delegate.processFinish(result);
-      /*  Intent intent = new Intent(context, JokeActivity.class);
-        intent.putExtra(JokeActivity.JOKE_KEY, result);
-        context.startActivity(intent);*/
     }
 }
